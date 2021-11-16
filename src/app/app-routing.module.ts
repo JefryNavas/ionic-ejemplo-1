@@ -8,8 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full'
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./paginas/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'contactos',
+    loadChildren: () => import('./paginas/contactos/contactos.module').then( m => m.ContactosPageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./paginas/info/info.module').then( m => m.InfoPageModule)
   },
 ];
 
